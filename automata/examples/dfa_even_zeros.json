@@ -1,0 +1,14 @@
+{
+  "type": "dfa",
+  "description": "Accepts binary strings with an even number of 0s",
+  "states": ["E", "O"],
+  "alphabet": ["0", "1"],
+  "start": "E",
+  "accept": ["E"],
+  "transitions": [
+    {"from": "E", "symbol": "0", "to": "O"},
+    {"from": "E", "symbol": "1", "to": "E"},
+    {"from": "O", "symbol": "0", "to": "E"},
+    {"from": "O", "symbol": "1", "to": "O"}
+  ]
+}

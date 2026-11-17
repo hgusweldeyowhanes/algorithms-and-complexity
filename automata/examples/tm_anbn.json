@@ -1,0 +1,27 @@
+{
+  "type": "tm",
+  "description": "Accepts a^n b^n (n >= 0). Classic non-regular language.",
+  "states": ["q0", "q1", "q2", "q3", "q4", "qa", "qr"],
+  "input_alphabet": ["a", "b"],
+  "tape_alphabet": ["a", "b", "X", "Y", "_"],
+  "blank": "_",
+  "start": "q0",
+  "accept": "qa",
+  "reject": "qr",
+  "transitions": [
+    {"state": "q0", "read": "a", "write": "X", "move": "R", "next": "q1"},
+    {"state": "q0", "read": "Y", "write": "Y", "move": "R", "next": "q3"},
+    {"state": "q0", "read": "_", "write": "_", "move": "S", "next": "qa"},
+
+    {"state": "q1", "read": "a", "write": "a", "move": "R", "next": "q1"},
+    {"state": "q1", "read": "Y", "write": "Y", "move": "R", "next": "q1"},
+    {"state": "q1", "read": "b", "write": "Y", "move": "L", "next": "q2"},
+
+    {"state": "q2", "read": "a", "write": "a", "move": "L", "next": "q2"},
+    {"state": "q2", "read": "Y", "write": "Y", "move": "L", "next": "q2"},
+    {"state": "q2", "read": "X", "write": "X", "move": "R", "next": "q0"},
+
+    {"state": "q3", "read": "Y", "write": "Y", "move": "R", "next": "q3"},
+    {"state": "q3", "read": "_", "write": "_", "move": "S", "next": "qa"}
+  ]
+}
