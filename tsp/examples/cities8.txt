@@ -1,0 +1,9 @@
+# 8 cities for exact vs heuristic comparison
+A 0.0 0.0
+B 2.0 0.5
+C 3.5 1.5
+D 3.0 3.0
+E 1.5 3.5
+F 0.2 2.8
+G 1.0 1.5
+H 2.2 2.0
