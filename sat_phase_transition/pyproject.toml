@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sat-phase-transition"
+version = "0.1.0"
+description = "Random k-SAT phase transition experiments (SAT probability vs clause/variable ratio)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+sat-phase-transition = "sat_phase_transition.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sat_phase_transition*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
