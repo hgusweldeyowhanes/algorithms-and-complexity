@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "np-reductions"
+version = "0.1.0"
+description = "NP-completeness reduction visualizer (3-SAT → Clique / Vertex Cover) with bidirectional checks"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+np-reductions = "np_reductions.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["np_reductions*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
