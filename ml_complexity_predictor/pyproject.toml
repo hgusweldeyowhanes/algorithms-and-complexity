@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml-complexity-predictor"
+version = "0.1.0"
+description = "ML-based algorithm complexity predictor from execution-time curves"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+ml-complexity-predictor = "ml_complexity_predictor.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ml_complexity_predictor*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
